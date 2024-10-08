@@ -16,19 +16,21 @@
 		response.setIntHeader("Refresh",5);
 		
 		response.setCharacterEncoding("utf-8");
-		<% out.println("<h1>" + "Response Example<h1>"); %>
-	
 		%>
+		
+		<% out.println("<h1>" + "Response Example</h1>"); %>
+	
+		
 		<pre>
 			Cache-control:<%= response.getHeader("Cache-control") %>
 			contentType:<%= response.getHeader("contentType") %>
 			date: <% out.println(response.getHeader("date")); %>
 			Character Encoding: <%= response.getCharacterEncoding() %>
 			
-			<%= new java.util.Date() %>
+			
 		</pre>
 		
-<% response.sendError(404, "요청 페이지를 찾을 수 없습니다."); %>
-<% //response.sendError(505, "내장 서버 오류가 발생했습니다."); %>
+<% //response.sendError(404, "요청 페이지를 찾을 수 없습니다."); %>
+<% //response.sendError(505, "내장 서버 오류가 발생했습니다."); %> 
 </body>
 </html>
